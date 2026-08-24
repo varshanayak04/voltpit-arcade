@@ -82,16 +82,44 @@ mind — plain `letter-spacing` overflows.
 If you change any shipped file, bump `CACHE` in `sw.js`. Returning visitors are
 served from the old cache until the version string changes.
 
+## Pushing to GitHub
+
+```bash
+cd voltpit-arcade
+git init -b main
+git add -A
+git commit -m "VOLTPIT Arcade: five-cabinet neon arcade, no build step"
+git remote add origin https://github.com/<your-username>/voltpit-arcade.git
+git push -u origin main
+```
+
+Create the repository on GitHub first, empty — no README, no .gitignore, no
+licence, or the first push will be rejected as a non-fast-forward.
+
 ## Deploying to Render
 
 The included `render.yaml` describes a static site with an empty build command
-and `.` as the publish path, which matches the no-build constraint. Point Render
-at the repository and it will pick the file up. The one thing worth keeping is
-the `Cache-Control: no-cache, no-store, must-revalidate` header on `/sw.js`; a
-cached service worker cannot update itself and users get stuck on an old build.
+and `.` as the publish path, which matches the no-build constraint. In the Render
+dashboard choose **New → Static Site**, connect the GitHub repository, and it
+will read `render.yaml`. If you configure the service by hand instead, leave the
+build command empty and set the publish directory to `.`.
 
-Before going live, replace the sitemap placeholder in `robots.txt` and the
-`og:url` value in `index.html` with the real domain.
+Two details in that file are load-bearing. The
+`Cache-Control: no-cache, no-store, must-revalidate` header on `/sw.js` matters
+because a cached service worker cannot update itself and returning visitors get
+stuck on an old build forever. And there is deliberately **no** SPA rewrite:
+this page has no client-side router, so a catch-all rewrite to `/index.html`
+would make a missing asset answer `200` with HTML instead of `404`, which
+silently poisons the service worker cache — `cache.add()` would succeed and
+store an HTML error page under a `.js` or `.svg` URL. Missing paths should 404.
+
+Render's free static tier serves over https, which the service worker requires,
+so the PWA install prompt and offline mode work on the default
+`*.onrender.com` domain without a custom domain.
+
+Once you know the live URL, replace the sitemap placeholder in `robots.txt` and
+the `og:url` value in `index.html` with it. Both currently point at
+`example.com`, so link previews will be wrong until you do.
 
 ## Accessibility and motion
 
