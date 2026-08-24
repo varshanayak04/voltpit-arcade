@@ -1,19 +1,24 @@
-# ⚡ VOLTPIT Arcade
+<p align="center">
+  <h1 align="center">⚡ VOLTPIT Arcade</h1>
+</p>
 
-> **A modern browser-based arcade platform featuring multiple interactive games, responsive UI, animations, sound effects, and Progressive Web App support.**
+<p align="center">
+  A modern browser-based arcade platform featuring multiple interactive games, responsive UI, animations, sound effects, and Progressive Web App support.
+</p>
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Play%20Now-00D4FF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://voltpit-arcade.onrender.com)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/varshanayak04/voltpit-arcade)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](#-license)
+<p align="center">
+  <a href="https://voltpit-arcade.onrender.com"><img src="https://img.shields.io/badge/demo-live-brightgreen" alt="Live Demo"></a>
+  <a href="https://github.com/varshanayak04/voltpit-arcade"><img src="https://img.shields.io/badge/github-repo-blue" alt="GitHub Repo"></a>
+  <a href="#-license"><img src="https://img.shields.io/badge/license-MIT-yellow" alt="License"></a>
+</p>
 
 ---
 
 ## 🎮 Live Demo
 
-### ⚡ Play VOLTPIT Arcade
+**⚡ Play VOLTPIT Arcade**
 
-**Live Website:**  
-https://voltpit-arcade.onrender.com
+🔗 **Live Website:** [https://voltpit-arcade.onrender.com](https://voltpit-arcade.onrender.com)
 
 The application is deployed as a static website and can be accessed directly from any modern web browser.
 
@@ -21,7 +26,7 @@ The application is deployed as a static website and can be accessed directly fro
 
 ## 📌 Overview
 
-**VOLTPIT Arcade** is a browser-based gaming platform designed to bring multiple lightweight arcade experiences together in a single polished interface.
+VOLTPIT Arcade is a browser-based gaming platform designed to bring multiple lightweight arcade experiences together in a single polished interface.
 
 The project focuses on creating an engaging arcade environment with:
 
@@ -46,16 +51,14 @@ VOLTPIT Arcade is built using standard web technologies while maintaining a modu
 VOLTPIT Arcade currently includes several mini-games:
 
 | Game | Description |
-|------|-------------|
-| 🐍 **Snake** | Classic snake gameplay with increasing difficulty |
-| 🧱 **Breaker** | Break blocks using a controllable paddle and ball |
-| 🧠 **Recall** | Test your memory and pattern recognition |
-| ⚡ **Reflex** | Test reaction speed and response time |
-| 🔢 **Merge** | Combine matching elements and build higher values |
+|---|---|
+| 🐍 Snake | Classic snake gameplay with increasing difficulty |
+| 🧱 Breaker | Break blocks using a controllable paddle and ball |
+| 🧠 Recall | Test your memory and pattern recognition |
+| ⚡ Reflex | Test reaction speed and response time |
+| 🔢 Merge | Combine matching elements and build higher values |
 
 Each game is implemented as an independent JavaScript module.
-
----
 
 ### 🏆 Arcade Experience
 
@@ -73,8 +76,6 @@ Key elements include:
 - Visual feedback
 - Game-specific controls
 
----
-
 ### 🎨 Modern UI
 
 The interface is designed around an arcade-inspired visual identity with:
@@ -87,8 +88,6 @@ The interface is designed around an arcade-inspired visual identity with:
 - Visual feedback
 - Mobile-friendly layouts
 - Desktop arcade experience
-
----
 
 ### 🔊 Audio System
 
@@ -103,8 +102,6 @@ Audio feedback can be used for:
 - Game completion
 - Arcade interactions
 
----
-
 ### 💾 Local Storage
 
 The application uses browser-side storage where appropriate to preserve user-related game data.
@@ -117,8 +114,6 @@ This allows the application to maintain information such as:
 - Arcade state
 
 No account or backend database is required for the core experience.
-
----
 
 ### 📱 Progressive Web App
 
@@ -138,24 +133,21 @@ This allows supported browsers to install VOLTPIT Arcade like an application.
 
 ## 🛠️ Tech Stack
 
-### Frontend
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- SVG
+- Web APIs
 
-- **HTML5**
-- **CSS3**
-- **JavaScript (ES6+)**
-- **SVG**
-- **Web APIs**
-
-### Browser Technologies
-
+**Browser Technologies**
 - Canvas / DOM APIs
 - Local Storage
 - Service Workers
 - Web App Manifest
 - Browser Audio APIs
 
-### Development
-
+**Development**
 - Git
 - GitHub
 - Python HTTP Server
@@ -167,7 +159,7 @@ This allows supported browsers to install VOLTPIT Arcade like an application.
 
 The project follows a modular frontend architecture.
 
-```text
+```
 voltpit-arcade/
 │
 ├── assets/
@@ -213,137 +205,175 @@ voltpit-arcade/
 ├── AGENTS.md
 ├── .gitignore
 └── README.md
-🧩 Application Modules
-main.js
+```
 
+---
+
+## 🧩 Application Modules
+
+The application uses a modular JavaScript architecture where each core feature is separated into its own module.
+
+### Core Modules
+
+#### `main.js`
 Responsible for core application initialization and global UI behavior.
 
-arcade.js
-
+#### `arcade.js`
 Handles arcade navigation and game selection functionality.
 
-attract.js
-
+#### `attract.js`
 Controls the arcade attract-mode experience and automated visual interactions.
 
-audio.js
-
+#### `audio.js`
 Provides centralized audio functionality for interactive feedback and game sounds.
 
-motion.js
-
+#### `motion.js`
 Handles animation and motion-related UI behavior.
 
-store.js
-
+#### `store.js`
 Manages client-side application state and persistent browser data.
 
-games/base.js
+### Game Engine
 
+#### `games/base.js`
 Provides shared functionality and common game behavior used by individual games.
 
-Individual Games
+### Individual Games
 
 Each game has its own module:
 
-snake.js
-breaker.js
-recall.js
-reflex.js
-merge.js
+- `snake.js`
+- `breaker.js`
+- `recall.js`
+- `reflex.js`
+- `merge.js`
 
 This modular approach makes it easier to add additional games without modifying the entire application.
 
-🚀 Getting Started
+---
+
+## 🚀 Getting Started
 
 You can run VOLTPIT Arcade locally without installing a frontend framework or package manager.
 
-1. Clone the repository
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/varshanayak04/voltpit-arcade.git
-2. Enter the project directory
+```
+
+### 2. Enter the project directory
+
+```bash
 cd voltpit-arcade
-3. Start a local HTTP server
+```
+
+### 3. Start a local HTTP server
 
 Using Python:
 
+```bash
 python3 -m http.server 8000
-4. Open the application
+```
+
+### 4. Open the application
 
 Visit:
 
+```
 http://localhost:8000
+```
 
 You can also use any other static HTTP server.
 
-🌐 Deployment
+---
 
-VOLTPIT Arcade is deployed using Render Static Sites.
+## 🌐 Deployment
 
-Deployment Configuration
+VOLTPIT Arcade is deployed using **Render Static Sites**.
+
+### Deployment Configuration
 
 Because the project is a static website, no build process is required.
 
 Recommended Render configuration:
 
-Service Type: Static Site
-Branch: main
-Root Directory: .
-Build Command: Leave Empty
-Publish Directory: .
-Live Deployment
-https://voltpit-arcade.onrender.com
+| Setting | Value |
+|---|---|
+| Service Type | Static Site |
+| Branch | `main` |
+| Root Directory | `.` |
+| Build Command | *(leave empty)* |
+| Publish Directory | `.` |
 
-Every update pushed to the main branch can be configured to trigger a new deployment on Render.
+### Live Deployment
 
-🔄 Development Workflow
+🔗 [https://voltpit-arcade.onrender.com](https://voltpit-arcade.onrender.com)
+
+Every update pushed to the `main` branch can be configured to trigger a new deployment on Render.
+
+---
+
+## 🔄 Development Workflow
 
 The project follows a simple Git-based workflow.
 
+```bash
 git clone https://github.com/varshanayak04/voltpit-arcade.git
-
 cd voltpit-arcade
 
 # Make changes
 
 git add -A
-
 git commit -m "Update VOLTPIT Arcade"
-
 git push origin main
-🧪 Testing
+```
+
+---
+
+## 🧪 Testing
 
 Since VOLTPIT Arcade is a client-side web application, testing can primarily be performed directly in a modern browser.
 
-Recommended Browsers
-Google Chrome
-Microsoft Edge
-Mozilla Firefox
-Safari
-Basic Testing Checklist
- Application loads successfully
- Game selection works
- Each game starts correctly
- Keyboard controls work
- Touch interactions work where supported
- Scores update correctly
- Audio interactions work
- Animations render correctly
- Responsive layout works
- PWA installation works where supported
- Service worker registers successfully
-📱 Responsive Design
+### Recommended Browsers
+
+- Google Chrome
+- Microsoft Edge
+- Mozilla Firefox
+- Safari
+
+### Basic Testing Checklist
+
+- [ ] Application loads successfully
+- [ ] Game selection works
+- [ ] Each game starts correctly
+- [ ] Keyboard controls work
+- [ ] Touch interactions work where supported
+- [ ] Scores update correctly
+- [ ] Audio interactions work
+- [ ] Animations render correctly
+- [ ] Responsive layout works
+- [ ] PWA installation works where supported
+- [ ] Service worker registers successfully
+
+---
+
+## 📱 Responsive Design
 
 VOLTPIT Arcade is designed to work across different screen sizes.
 
-Supported Layouts
-🖥️ Desktop
-💻 Laptop
-📱 Mobile
-📟 Tablet
+### Supported Layouts
+
+- 🖥️ Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📟 Tablet
 
 The interface adapts to different viewport sizes while maintaining the arcade-style experience.
 
-🔐 Privacy
+---
+
+## 🔐 Privacy
 
 VOLTPIT Arcade does not require users to create an account for the core gaming experience.
 
@@ -351,109 +381,119 @@ The application is primarily client-side and does not require a traditional back
 
 Any locally stored game-related information remains within the user's browser storage.
 
-⚡ Performance
+---
+
+## ⚡ Performance
 
 The application is intentionally lightweight and uses vanilla web technologies to minimize unnecessary dependencies.
 
 Performance-focused characteristics include:
 
-No large frontend framework
-Minimal external dependencies
-Static asset delivery
-Modular JavaScript
-Browser-native APIs
-Client-side gameplay
-Static deployment architecture
-🔮 Future Improvements
+- No large frontend framework
+- Minimal external dependencies
+- Static asset delivery
+- Modular JavaScript
+- Browser-native APIs
+- Client-side gameplay
+- Static deployment architecture
+
+---
+
+## 🔮 Future Improvements
 
 Possible future enhancements include:
 
- Online leaderboards
- User accounts
- Multiplayer games
- More arcade games
- Achievement system
- Global scoring
- Game difficulty selection
- Advanced statistics
- Tournament mode
- Controller support
- Improved mobile controls
- Additional soundtracks
- More arcade themes
- Cloud save support
-🎯 Learning Objectives
+- [ ] Online leaderboards
+- [ ] User accounts
+- [ ] Multiplayer games
+- [ ] More arcade games
+- [ ] Achievement system
+- [ ] Global scoring
+- [ ] Game difficulty selection
+- [ ] Advanced statistics
+- [ ] Tournament mode
+- [ ] Controller support
+- [ ] Improved mobile controls
+- [ ] Additional soundtracks
+- [ ] More arcade themes
+- [ ] Cloud save support
+
+---
+
+## 🎯 Learning Objectives
 
 This project demonstrates practical experience with:
 
-Frontend web development
-JavaScript application architecture
-Modular JavaScript
-DOM manipulation
-Browser APIs
-Game development fundamentals
-State management
-Local storage
-Service workers
-Progressive Web Apps
-Responsive UI development
-Git and GitHub
-Static website deployment
-Render deployment
-💡 Why VOLTPIT Arcade?
+- Frontend web development
+- JavaScript application architecture
+- Modular JavaScript
+- DOM manipulation
+- Browser APIs
+- Game development fundamentals
+- State management
+- Local storage
+- Service workers
+- Progressive Web Apps
+- Responsive UI development
+- Git and GitHub
+- Static website deployment
+- Render deployment
+
+---
+
+## 💡 Why VOLTPIT Arcade?
 
 The goal of VOLTPIT Arcade is not simply to create individual browser games.
 
 The project explores how multiple interactive experiences can be combined into a single cohesive web application with:
 
-A unified interface + modular game architecture + responsive design + interactive feedback + PWA capabilities.
+> A unified interface + modular game architecture + responsive design + interactive feedback + PWA capabilities.
 
 This makes the project both a playable arcade platform and a demonstration of modern client-side web development.
 
-👨‍💻 Author
-K. Varsha Nayak
+---
 
+## 👨‍💻 Author
+
+**K. Varsha Nayak**
 Computer Science Engineering Student
 India
 
-GitHub:
+GitHub: [@varshanayak04](https://github.com/varshanayak04)
 
-@varshanayak04
+---
 
-🔗 Project Links
-Resource	Link
-🎮 Live Demo	https://voltpit-arcade.onrender.com
-💻 GitHub Repository	https://github.com/varshanayak04/voltpit-arcade
-📄 License
+## 🔗 Project Links
 
-This project is licensed under the MIT License.
+| Resource | Link |
+|---|---|
+| 🎮 Live Demo | [https://voltpit-arcade.onrender.com](https://voltpit-arcade.onrender.com) |
+| 💻 GitHub Repository | [https://github.com/varshanayak04/voltpit-arcade](https://github.com/varshanayak04/voltpit-arcade) |
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
 
 You are free to use, modify, and distribute the project according to the terms of the license.
 
-⭐ Support
+---
+
+## ⭐ Support
 
 If you like the project:
 
-⭐ Star the repository on GitHub
-🎮 Try the live arcade
-🐛 Report issues
-💡 Suggest new games
-🔧 Contribute improvements
+- ⭐ Star the repository on GitHub
+- 🎮 Try the live arcade
+- 🐛 Report issues
+- 💡 Suggest new games
+- 🔧 Contribute improvements
+
+---
 
 <p align="center">
-⚡ VOLTPIT Arcade
-
-Play. Compete. Repeat.
-
-Built with ❤️ using HTML, CSS and JavaScript.
-
-</p> ```
-One important thing
-
-Your current GitHub repository is already:
-
-github.com/varshanayak04/voltpit-arcade
-
-And your live Render deployment is:
-
-VOLTPIT Arcade — Live Demo
+  <b>⚡ VOLTPIT Arcade</b><br>
+  <i>Play. Compete. Repeat.</i><br><br>
+  Built with ❤️ using HTML, CSS and JavaScript.
+</p>
