@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" data-shift="night">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>VOLTPIT — Five arcade machines. No download.</title>
+  <meta name="description" content="VOLTPIT is a browser arcade with five hand-built machines: Neon Snake, Relay Breaker, Matrix Recall, Reflex Gate and Volt 2048. No download, no account, works offline." />
+  <meta name="theme-color" content="#0C0C0C" />
+  <meta name="color-scheme" content="dark light" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VOLTPIT Arcade" />
+  <meta property="og:description" content="Five browser arcade machines. No download, works offline." />
+  <meta property="og:image" content="assets/art/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;700;900&family=Chakra+Petch:wght@300;400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#floor">Skip to the machines</a>
+
+  <!-- ================= RAIL ================= -->
+  <header class="rail" aria-label="Primary">
+    <a class="rail__mark" href="#top" aria-label="VOLTPIT home">
+      <svg class="rail__bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2 4 14h6l-2 8 10-12h-6z" /></svg>
+      VOLTPIT
+    </a>
+    <nav class="rail__nav" aria-label="Sections">
+      <a class="rail__link" href="#hall">Hall</a>
+      <a class="rail__link" href="#rules">Rules</a>
+      <a class="rail__link" href="#floor">Machines</a>
+      <a class="rail__link" href="#scores">Scores</a>
+    </nav>
+    <div class="rail__tools">
+      <span class="rail__credits" aria-hidden="true">MODE <b>FREE PLAY</b></span>
+      <button class="tool" id="soundToggle" type="button" aria-pressed="false" aria-label="Toggle sound" title="Sound: on">
+        <svg class="tool__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" /><path d="M16 8a5 5 0 0 1 0 8" /></svg>
+        <svg class="tool__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" /><path d="M22 9l-6 6M16 9l6 6" /></svg>
+      </button>
+      <button class="tool" id="shiftToggle" type="button" aria-pressed="false" aria-label="Toggle house lights" title="House lights">
+        <svg class="tool__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A8 8 0 1 1 11.2 3 6.2 6.2 0 0 0 21 12.8z" /></svg>
+        <svg class="tool__off" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" /><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19" /></svg>
+      </button>
+    </div>
+    <div class="rail__progress" aria-hidden="true"></div>
+  </header>
+
+  <span id="top"></span>
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bloom" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <!-- the cabinet: signature element, plays an attract-mode demo on its CRT -->
+      <div class="cabinet magnet" id="cabinet" data-reveal data-ry="30" data-delay="0.6">
+        <div class="cabinet__body">
+          <div class="cabinet__marquee">VOLTPIT</div>
+          <div class="cabinet__bezel">
+            <div class="crt">
+              <canvas id="attract" width="320" height="240" aria-hidden="true"></canvas>
+              <div class="crt__label"><span>ATTRACT MODE</span><b>INSERT COIN</b></div>
+            </div>
+          </div>
+          <div class="cabinet__panel">
+            <div class="stick" aria-hidden="true"><span class="stick__shaft"></span><span class="stick__ball"></span></div>
+            <div class="cabinet__buttons" aria-hidden="true"><i></i><i></i><i></i></div>
+            <button class="coin" id="coinBtn" type="button" aria-label="Insert coin to change the machine on screen">
+              <span class="coin__slot" aria-hidden="true"></span>
+              <span class="coin__text">Insert Coin</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="hero__title display plate" id="hero-title" data-reveal data-ry="40" data-delay="0.15">
+        <span class="hero__titleclip">Press start</span>
+      </h1>
+
+      <div class="hero__foot">
+        <p class="hero__blurb" data-reveal data-ry="20" data-delay="0.35">
+          A five-machine arcade you can play right now — built by hand, no download.
+        </p>
+        <div class="hero__cta" data-reveal data-ry="20" data-delay="0.5">
+          <a class="btn btn--plasma" href="#floor" data-magnetic>Enter the arcade</a>
+          <span class="hero__hint">Tap the coin slot &#8595;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <section class="marquee" aria-label="Cabinet marquees" id="marquee">
+      <div class="marquee__rows">
+        <div class="marquee__row" id="row1" aria-hidden="true"></div>
+        <div class="marquee__row" id="row2" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ================= HALL (about) ================= -->
+    <section class="hall" id="hall" aria-labelledby="hall-title">
+      <img class="artifact artifact--tl" src="assets/art/cab-07.svg" alt="" data-reveal data-rx="-80" data-ry="0" data-delay="0.1" />
+      <img class="artifact artifact--tr" src="assets/art/cab-14.svg" alt="" data-reveal data-rx="80" data-ry="0" data-delay="0.15" />
+      <img class="artifact artifact--bl" src="assets/art/cab-19.svg" alt="" data-reveal data-rx="-80" data-ry="0" data-delay="0.25" />
+      <img class="artifact artifact--br" src="assets/art/cab-11.svg" alt="" data-reveal data-rx="80" data-ry="0" data-delay="0.3" />
+
+      <p class="eyebrow eyebrow--accent" data-reveal>@id/about</p>
+      <h2 class="hall__title display plate" id="hall-title" data-reveal data-ry="40">The Hall</h2>
+      <p class="hall__copy chars" id="hallCopy" data-reveal>
+        VOLTPIT is a small back-room arcade that lives in a browser tab. Five machines,
+        each written from scratch — no engine, no store page, no login. Drop a coin,
+        pick a cabinet, chase the board. Your top scores stay on this device.
+      </p>
+      <div class="hall__stats" data-reveal data-delay="0.1">
+        <div class="stat"><span class="stat__num">5</span><span class="stat__label">Machines</span></div>
+        <div class="stat"><span class="stat__num">0</span><span class="stat__label">Downloads</span></div>
+        <div class="stat"><span class="stat__num">&#8734;</span><span class="stat__label">Credits</span></div>
+        <div class="stat"><span class="stat__num">100%</span><span class="stat__label">Offline</span></div>
+      </div>
+      <a class="btn btn--plasma" href="#floor" data-magnetic data-reveal data-delay="0.2">Pick a machine</a>
+    </section>
+
+    <!-- ================= INSTRUCTION PLACARD ================= -->
+    <section class="placard" id="rules" aria-labelledby="rules-title">
+      <div class="placard__inner">
+        <div class="placard__top">
+          <h2 class="placard__title" id="rules-title">How to play</h2>
+          <span class="placard__reg">MODEL VP-5 &middot; PLACARD</span>
+        </div>
+        <div class="rules">
+          <article class="rule" data-reveal>
+            <span class="rule__key">CAB.01</span>
+            <div>
+              <h3 class="rule__name">Neon Snake</h3>
+              <p class="rule__body">Steer the current. Eat cells to grow, and don't cross your own tail. Every fifth cell drops a surge pellet worth double. The walls wrap — you only lose to yourself.</p>
+              <div class="keys"><kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd><kbd>W A S D</kbd><kbd>swipe</kbd></div>
+            </div>
+          </article>
+          <article class="rule" data-reveal>
+            <span class="rule__key">CAB.02</span>
+            <div>
+              <h3 class="rule__name">Relay Breaker</h3>
+              <p class="rule__body">A paddle, a ball, and a wall of charged bricks. Angle your returns off the paddle edges to reach the corners. Clear the wall to advance; each level speeds the ball and shrinks the paddle.</p>
+              <div class="keys"><kbd>&#8592;</kbd><kbd>&#8594;</kbd><kbd>mouse</kbd><kbd>drag</kbd></div>
+            </div>
+          </article>
+          <article class="rule" data-reveal>
+            <span class="rule__key">CAB.03</span>
+            <div>
+              <h3 class="rule__name">Matrix Recall</h3>
+              <p class="rule__body">The grid flashes a sequence of nodes. Play it back in order. Each round adds one node and quickens the flash. Miss once and the run ends — how deep can you hold the pattern?</p>
+              <div class="keys"><kbd>click</kbd><kbd>tap</kbd><kbd>1&ndash;9</kbd></div>
+            </div>
+          </article>
+          <article class="rule" data-reveal>
+            <span class="rule__key">CAB.04</span>
+            <div>
+              <h3 class="rule__name">Reflex Gate</h3>
+              <p class="rule__body">Wait for the gate to switch from red to ion-pink, then fire. Fire early and you fault, which adds 50&nbsp;ms to your average. Five rounds are averaged into your reaction time — lower is better, and it lands on its own board.</p>
+              <div class="keys"><kbd>space</kbd><kbd>click</kbd><kbd>tap</kbd></div>
+            </div>
+          </article>
+          <article class="rule" data-reveal>
+            <span class="rule__key">CAB.05</span>
+            <div>
+              <h3 class="rule__name">Volt 2048</h3>
+              <p class="rule__body">Slide the charge tiles together. Two equal tiles fuse into the next power. Keep merging toward the 2048 cell without filling the grid. One clean undo per run if you talk yourself into a mistake.</p>
+              <div class="keys"><kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd><kbd>swipe</kbd><kbd>U undo</kbd></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ARCADE FLOOR ================= -->
+    <section class="floor" id="floor" aria-labelledby="floor-title">
+      <div class="shell">
+        <div class="section__head">
+          <p class="eyebrow eyebrow--accent" data-reveal>@id/machines</p>
+          <h2 class="section__title display plate" id="floor-title" data-reveal data-ry="40">The Floor</h2>
+        </div>
+      </div>
+      <div class="floor__stack" id="stack">
+        <!-- cards injected by main.js from the CABINETS manifest -->
+      </div>
+    </section>
+
+    <!-- ================= HIGH SCORES ================= -->
+    <section class="scores" id="scores" aria-labelledby="scores-title">
+      <div class="shell">
+        <div class="section__head">
+          <p class="eyebrow eyebrow--accent" data-reveal>@id/scores</p>
+          <h2 class="section__title display plate" id="scores-title" data-reveal data-ry="40">Top Scores</h2>
+        </div>
+        <div class="scores__grid" id="boards"><!-- boards injected by main.js --></div>
+        <div class="scores__foot">
+          <p class="scores__note">Scores are saved to this device only.</p>
+          <button class="btn btn--ghost btn--sm" id="wipeScores" type="button">Wipe all scores</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer" aria-label="Footer">
+      <div class="shell footer__row">
+        <p class="footer__mark display plate">GAME OVER?</p>
+        <div class="footer__meta">
+          <span>VOLTPIT &middot; a browser arcade</span>
+          <span>Built with plain HTML, CSS &amp; JS</span>
+          <span><a href="#top">Back to top &#8593;</a></span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ================= PLAY OVERLAY ================= -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="hudTitle" hidden>
+    <div class="overlay__panel">
+      <div class="hud">
+        <span class="hud__title" id="hudTitle">Machine</span>
+        <span class="hud__stat" id="hudScore">SCORE <b>0</b></span>
+        <span class="hud__stat" id="hudBest">BEST <b>0</b></span>
+        <span class="hud__spacer"></span>
+        <button class="tool" id="pauseBtn" type="button" aria-label="Pause" title="Pause">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14" /></svg>
+        </button>
+        <button class="tool" id="restartBtn" type="button" aria-label="Restart" title="Restart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2 6" /><path d="M20 4v6h-6" /></svg>
+        </button>
+        <button class="tool" id="closeBtn" type="button" aria-label="Leave machine" title="Leave (Esc)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+      </div>
+
+      <div class="stage" id="stage">
+        <canvas id="game" width="480" height="360"></canvas>
+        <div class="curtain" id="curtain" hidden>
+          <p class="eyebrow eyebrow--accent" id="curtainTag">Ready</p>
+          <h3 class="curtain__title" id="curtainTitle">Insert coin</h3>
+          <p class="curtain__body" id="curtainBody">Press start to play.</p>
+          <div class="initials" id="initials" hidden>
+            <input maxlength="1" inputmode="latin" aria-label="Initial 1" />
+            <input maxlength="1" inputmode="latin" aria-label="Initial 2" />
+            <input maxlength="1" inputmode="latin" aria-label="Initial 3" />
+          </div>
+          <button class="btn btn--plasma" id="curtainBtn" type="button">Start</button>
+        </div>
+      </div>
+
+      <div class="pad" id="pad">
+        <div class="pad__dirs">
+          <button class="pad__btn is-up" data-dir="up" aria-label="Up">&#9650;</button>
+          <button class="pad__btn is-left" data-dir="left" aria-label="Left">&#9664;</button>
+          <button class="pad__btn is-down" data-dir="down" aria-label="Down">&#9660;</button>
+          <button class="pad__btn is-right" data-dir="right" aria-label="Right">&#9654;</button>
+        </div>
+        <button class="pad__btn pad__action" data-dir="action" aria-label="Action">FIRE</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor cursor--ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor cursor--dot" id="cursorDot" aria-hidden="true"></div>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

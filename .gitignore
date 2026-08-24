@@ -1,0 +1,16 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Python bytecode from tools/
+__pycache__/
+*.pyc
+
+# Local dev servers / logs
+*.log
+
+# The distributable zip is a build artifact, not source
+voltpit-arcade.zip

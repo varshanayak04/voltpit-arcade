@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: voltpit-arcade
+    runtime: static
+    # No build step on purpose: this is plain HTML, CSS and JS.
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    headers:
+      # The service worker must never be served stale, or users get stuck on an
+      # old build forever.
+      - path: /sw.js
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    # No SPA rewrite on purpose. There is no client-side router here, so a
+    # catch-all rewrite to /index.html would only mean that a genuinely missing
+    # asset answers 200 with HTML instead of 404 — which silently poisons the
+    # service worker cache (cache.add succeeds and stores HTML under a .js or
+    # .svg URL) and hides typos. Let missing paths 404.

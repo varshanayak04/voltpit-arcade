@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" width="420" height="270" role="img" aria-label="HARD SYNC cabinet marquee">
+<defs>
+<linearGradient id="g17f" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0C0C0C" stop-opacity="0"/>
+<stop offset="0.55" stop-color="#0C0C0C" stop-opacity="0.72"/>
+<stop offset="1" stop-color="#0C0C0C" stop-opacity="0.98"/>
+</linearGradient>
+<linearGradient id="g17t" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#D7E2EA"/>
+<stop offset="1" stop-color="#FF6A1F"/>
+</linearGradient>
+<clipPath id="g17c"><rect width="420" height="270" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#g17c)">
+<rect width="420" height="270" fill="#0C0C0C"/>
+<rect width="420" height="270" fill="#FF2FD0" opacity="0.09"/>
+<path d="M90 100 L90 80 L90 120 L90 160 L50 160" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.52" stroke-linecap="square"/><circle cx="50" cy="160" r="3.4" fill="#FF2FD0"/><path d="M60 220 L120 220 L120 180 L120 140 L160 140" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.36" stroke-linecap="square"/><circle cx="160" cy="140" r="3.4" fill="#FF2FD0"/><path d="M30 180 L30 140 L30 120 L30 80 L6 80" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.41" stroke-linecap="square"/><circle cx="6" cy="80" r="3.4" fill="#FF2FD0"/><path d="M170 20 L230 20 L290 20 L330 20 L290 20" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.44" stroke-linecap="square"/><circle cx="290" cy="20" r="3.4" fill="#FF2FD0"/><path d="M330 90 L370 90 L310 90 L310 130 L250 130" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.46" stroke-linecap="square"/><circle cx="250" cy="130" r="3.4" fill="#FF2FD0"/><path d="M120 100 L80 100 L80 80 L120 80 L120 120 L120 140" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.33" stroke-linecap="square"/><circle cx="120" cy="140" r="3.4" fill="#FF2FD0"/><path d="M160 20 L200 20 L240 20 L300 20 L340 20 L340 40" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.42" stroke-linecap="square"/><circle cx="340" cy="40" r="3.4" fill="#FF2FD0"/><path d="M50 200 L6 200 L46 200 L6 200" fill="none" stroke="#FF2FD0" stroke-width="2" opacity="0.52" stroke-linecap="square"/><circle cx="6" cy="200" r="3.4" fill="#FF2FD0"/><path d="M180 170 L180 190 L240 190 L240 230 L180 230" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.47" stroke-linecap="square"/><circle cx="180" cy="230" r="3.4" fill="#FF2FD0"/><path d="M370 170 L414 170 L414 130 L414 150" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.55" stroke-linecap="square"/><circle cx="414" cy="150" r="3.4" fill="#FF2FD0"/><path d="M260 50 L260 70 L320 70 L320 110 L320 90" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.34" stroke-linecap="square"/><circle cx="320" cy="90" r="3.4" fill="#FF2FD0"/><path d="M360 90 L360 50 L320 50 L280 50 L220 50 L220 30" fill="none" stroke="#FF2FD0" stroke-width="2" opacity="0.79" stroke-linecap="square"/><circle cx="220" cy="30" r="3.4" fill="#FF2FD0"/><path d="M210 10 L210 6 L210 46" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.3" stroke-linecap="square"/><circle cx="210" cy="46" r="3.4" fill="#FF2FD0"/><path d="M360 150 L360 130 L360 110 L360 150" fill="none" stroke="#FF2FD0" stroke-width="2" opacity="0.66" stroke-linecap="square"/><circle cx="360" cy="150" r="3.4" fill="#FF2FD0"/><path d="M360 150 L360 110 L360 150 L400 150 L400 130" fill="none" stroke="#FF2FD0" stroke-width="2" opacity="0.33" stroke-linecap="square"/><circle cx="400" cy="130" r="3.4" fill="#FF2FD0"/><path d="M20 200 L20 180 L20 200" fill="none" stroke="#FF6A1F" stroke-width="2" opacity="0.76" stroke-linecap="square"/><circle cx="20" cy="200" r="3.4" fill="#FF2FD0"/>
+<rect width="420" height="270" fill="url(#g17f)"/>
+<text x="26" y="228" font-family="Kanit, Impact, 'Arial Black', sans-serif" font-weight="900"
+      font-size="34" textLength="207" lengthAdjust="spacingAndGlyphs" fill="url(#g17t)">HARD SYNC</text>
+<text x="26" y="250" font-family="'Share Tech Mono', ui-monospace, monospace"
+      font-size="12" textLength="144" lengthAdjust="spacingAndGlyphs" fill="#646973">CAB.18 / VOLTPIT</text>
+<rect x="0" y="0" width="420" height="4" fill="#FF6A1F" opacity="0.85"/>
+<rect width="420" height="270" rx="18" fill="none" stroke="#D7E2EA" stroke-opacity="0.14" stroke-width="2"/>
+</g>
+</svg>
